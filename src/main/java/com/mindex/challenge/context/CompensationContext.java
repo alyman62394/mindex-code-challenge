@@ -1,4 +1,4 @@
-package com.mindex.challenge.service.impl;
+package com.mindex.challenge.context;
 
 import com.mindex.challenge.data.Compensation;
 import com.mindex.challenge.data.Employee;
@@ -6,10 +6,10 @@ import com.mindex.challenge.service.EmployeeService;
 
 import java.util.Date;
 
-public class CompensationService {
+public class CompensationContext {
     private final EmployeeService employeeService;
 
-    public CompensationService(EmployeeService employeeService) {
+    public CompensationContext(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 

@@ -2,7 +2,7 @@ package com.mindex.challenge.controller;
 
 import com.mindex.challenge.data.ReportingStructure;
 import com.mindex.challenge.service.EmployeeService;
-import com.mindex.challenge.service.impl.ReportingStructureService;
+import com.mindex.challenge.context.ReportingStructureContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class ReportingStructureController {
     @GetMapping("/reportingStructure/{id}")
     public ReportingStructure read(@PathVariable String id) {
         LOG.debug("Received reporting structure read request for id [{}]", id);
-        ReportingStructureService structure = new ReportingStructureService(employeeService);
+        ReportingStructureContext structure = new ReportingStructureContext(employeeService);
         return structure.getReportingStructure(id);
     }
 }

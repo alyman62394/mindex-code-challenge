@@ -3,7 +3,7 @@ package com.mindex.challenge.controller;
 import com.mindex.challenge.data.Compensation;
 import com.mindex.challenge.data.Employee;
 import com.mindex.challenge.service.EmployeeService;
-import com.mindex.challenge.service.impl.CompensationService;
+import com.mindex.challenge.context.CompensationContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +20,16 @@ public class CompensationController {
     @GetMapping("/compensation/{id}")
     public Compensation read(@PathVariable String id) {
         LOG.debug("Received compensation read request for id [{}]", id);
-        CompensationService compensationService = new CompensationService(employeeService);
-        return compensationService.getCompensation(id);
+        CompensationContext compensationContext = new CompensationContext(employeeService);
+        return compensationContext.getCompensation(id);
     }
 
     @PutMapping("/compensation/{id}")
     public Compensation update(@PathVariable String id, @RequestBody Compensation compensation) {
         LOG.debug("Received compensation request for id [{}] and compensation [{}]", id, compensation);
 
-        CompensationService compensationService = new CompensationService(employeeService);
-        Employee employee = compensationService.setCompensation(id, compensation);
+        CompensationContext compensationContext = new CompensationContext(employeeService);
+        Employee employee = compensationContext.setCompensation(id, compensation);
         return employee.getCompensation();
     }
 }

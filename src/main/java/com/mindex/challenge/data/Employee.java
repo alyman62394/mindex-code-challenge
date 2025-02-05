@@ -17,6 +17,9 @@ public class Employee {
     private String department;
     private List<Employee> directReports;
 
+    /*
+     * An employee has a compensation and is unique to an employee. That is why I put it directly on the Employee object.
+     */
     private Compensation compensation;
 
     public Employee() {

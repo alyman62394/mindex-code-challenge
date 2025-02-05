@@ -1,4 +1,4 @@
-package com.mindex.challenge.service.impl;
+package com.mindex.challenge.context;
 
 import com.mindex.challenge.data.Employee;
 import com.mindex.challenge.data.ReportingStructure;
@@ -7,10 +7,10 @@ import com.mindex.challenge.service.EmployeeService;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReportingStructureService {
+public class ReportingStructureContext {
     private final EmployeeService employeeService;
 
-    public ReportingStructureService(EmployeeService employeeService) {
+    public ReportingStructureContext(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -20,6 +20,13 @@ public class ReportingStructureService {
         return new ReportingStructure(emp, numOfReports);
     }
 
+    /**
+     * Recursive function to dig down to the bottom of the employee list and build up reporting employees.
+     * Resets the direct reports list and adds the full employee object after fetching it.
+     *
+     * @param employee employee object to check the direct reports underneath it.
+     * @return number of reports
+     */
     private int getNumberOfReports(Employee employee) {
         List<Employee> directReports = employee.getDirectReports();
         if (null == directReports || directReports.isEmpty()) {
