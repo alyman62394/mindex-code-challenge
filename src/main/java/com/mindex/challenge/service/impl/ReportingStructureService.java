@@ -4,6 +4,7 @@ import com.mindex.challenge.data.Employee;
 import com.mindex.challenge.data.ReportingStructure;
 import com.mindex.challenge.service.EmployeeService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReportingStructureService {
@@ -25,9 +26,11 @@ public class ReportingStructureService {
             return 0;
         }
         int reports = employee.getDirectReports().size();
+        employee.setDirectReports(new ArrayList<>());
         for(Employee emp: directReports) {
             emp = employeeService.read(emp.getEmployeeId());
             reports += getNumberOfReports(emp);
+            employee.addDirectReport(emp);
         }
         return reports;
     }

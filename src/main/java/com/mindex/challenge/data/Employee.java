@@ -3,6 +3,7 @@ package com.mindex.challenge.data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -67,6 +68,13 @@ public class Employee {
 
     public void setDirectReports(List<Employee> directReports) {
         this.directReports = directReports;
+    }
+
+    public void addDirectReport(Employee directReport) {
+        if (this.directReports == null) {
+            this.directReports = new ArrayList<>();
+        }
+        this.directReports.add(directReport);
     }
 
     public Compensation getCompensation() {

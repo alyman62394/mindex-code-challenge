@@ -79,12 +79,12 @@
 </thead>
 <tr>
 <td class="success">testCreateEmployeeAndUpdate</td>
-<td class="success">0.009s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testReadEmployee</td>
-<td class="success">0.004s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -97,14 +97,14 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2025-02-05T15:15:04.521-05:00  INFO 4821 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mindex.challenge.controller.EmployeeControllerTest]: EmployeeControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-02-05T15:15:04.522-05:00  INFO 4821 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mindex.challenge.ChallengeApplication for test class com.mindex.challenge.controller.EmployeeControllerTest
-2025-02-05T15:15:04.525-05:00 DEBUG 4821 --- [o-auto-1-exec-4] c.m.c.controller.EmployeeController      : Received employee read request for id [16a596ae-edd3-4847-99fe-c4518e82c86f]
-2025-02-05T15:15:04.525-05:00 DEBUG 4821 --- [o-auto-1-exec-4] c.m.c.service.impl.EmployeeServiceImpl   : Fetching employee with id [16a596ae-edd3-4847-99fe-c4518e82c86f]
-2025-02-05T15:15:04.528-05:00 DEBUG 4821 --- [o-auto-1-exec-5] c.m.c.controller.EmployeeController      : Received employee updat3e request for id [16a596ae-edd3-4847-99fe-THISISATEST] and employee [com.mindex.challenge.data.Employee@604d2130]
-2025-02-05T15:15:04.528-05:00 DEBUG 4821 --- [o-auto-1-exec-5] c.m.c.service.impl.EmployeeServiceImpl   : Updating employee [com.mindex.challenge.data.Employee@604d2130]
-2025-02-05T15:15:04.528-05:00 DEBUG 4821 --- [o-auto-1-exec-5] c.m.c.service.impl.EmployeeServiceImpl   : Fetching employee with id [16a596ae-edd3-4847-99fe-THISISATEST]
-2025-02-05T15:15:04.530-05:00 ERROR 4821 --- [o-auto-1-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Invalid employeeId: 16a596ae-edd3-4847-99fe-THISISATEST] with root cause
+<pre>2025-02-05T16:06:10.575-05:00  INFO 5884 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.mindex.challenge.controller.EmployeeControllerTest]: EmployeeControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-02-05T16:06:10.576-05:00  INFO 5884 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.mindex.challenge.ChallengeApplication for test class com.mindex.challenge.controller.EmployeeControllerTest
+2025-02-05T16:06:10.579-05:00 DEBUG 5884 --- [o-auto-1-exec-4] c.m.c.controller.EmployeeController      : Received employee read request for id [16a596ae-edd3-4847-99fe-c4518e82c86f]
+2025-02-05T16:06:10.579-05:00 DEBUG 5884 --- [o-auto-1-exec-4] c.m.c.service.impl.EmployeeServiceImpl   : Fetching employee with id [16a596ae-edd3-4847-99fe-c4518e82c86f]
+2025-02-05T16:06:10.582-05:00 DEBUG 5884 --- [o-auto-1-exec-5] c.m.c.controller.EmployeeController      : Received employee updat3e request for id [16a596ae-edd3-4847-99fe-THISISATEST] and employee [com.mindex.challenge.data.Employee@f21a1e4]
+2025-02-05T16:06:10.582-05:00 DEBUG 5884 --- [o-auto-1-exec-5] c.m.c.service.impl.EmployeeServiceImpl   : Updating employee [com.mindex.challenge.data.Employee@f21a1e4]
+2025-02-05T16:06:10.582-05:00 DEBUG 5884 --- [o-auto-1-exec-5] c.m.c.service.impl.EmployeeServiceImpl   : Fetching employee with id [16a596ae-edd3-4847-99fe-THISISATEST]
+2025-02-05T16:06:10.585-05:00 ERROR 5884 --- [o-auto-1-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Invalid employeeId: 16a596ae-edd3-4847-99fe-THISISATEST] with root cause
 
 java.lang.RuntimeException: Invalid employeeId: 16a596ae-edd3-4847-99fe-THISISATEST
 	at com.mindex.challenge.service.impl.EmployeeServiceImpl.read(EmployeeServiceImpl.java:39) ~[main/:na]
@@ -159,13 +159,13 @@ java.lang.RuntimeException: Invalid employeeId: 16a596ae-edd3-4847-99fe-THISISAT
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.19.jar:10.1.19]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
-2025-02-05T15:15:04.540-05:00 DEBUG 4821 --- [o-auto-1-exec-6] c.m.c.controller.EmployeeController      : Received employee create request for [com.mindex.challenge.data.Employee@1ef32ce0]
-2025-02-05T15:15:04.540-05:00 DEBUG 4821 --- [o-auto-1-exec-6] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [com.mindex.challenge.data.Employee@1ef32ce0]
-2025-02-05T15:15:04.543-05:00 DEBUG 4821 --- [o-auto-1-exec-7] c.m.c.controller.EmployeeController      : Received employee updat3e request for id [4c262524-fc99-488a-bc60-e278ff3649f1] and employee [com.mindex.challenge.data.Employee@7737869d]
-2025-02-05T15:15:04.543-05:00 DEBUG 4821 --- [o-auto-1-exec-7] c.m.c.service.impl.EmployeeServiceImpl   : Updating employee [com.mindex.challenge.data.Employee@7737869d]
-2025-02-05T15:15:04.543-05:00 DEBUG 4821 --- [o-auto-1-exec-7] c.m.c.service.impl.EmployeeServiceImpl   : Fetching employee with id [4c262524-fc99-488a-bc60-e278ff3649f1]
-2025-02-05T15:15:04.549-05:00 DEBUG 4821 --- [o-auto-1-exec-8] c.m.c.controller.EmployeeController      : Received employee read request for id [16a596ae-edd3-4847-99fe-c4518e82c86f]
-2025-02-05T15:15:04.549-05:00 DEBUG 4821 --- [o-auto-1-exec-8] c.m.c.service.impl.EmployeeServiceImpl   : Fetching employee with id [16a596ae-edd3-4847-99fe-c4518e82c86f]
+2025-02-05T16:06:10.596-05:00 DEBUG 5884 --- [o-auto-1-exec-6] c.m.c.controller.EmployeeController      : Received employee create request for [com.mindex.challenge.data.Employee@bea7c3f]
+2025-02-05T16:06:10.596-05:00 DEBUG 5884 --- [o-auto-1-exec-6] c.m.c.service.impl.EmployeeServiceImpl   : Creating employee [com.mindex.challenge.data.Employee@bea7c3f]
+2025-02-05T16:06:10.599-05:00 DEBUG 5884 --- [o-auto-1-exec-7] c.m.c.controller.EmployeeController      : Received employee updat3e request for id [95250c15-398f-4cf8-994b-104838efcc42] and employee [com.mindex.challenge.data.Employee@61ab17f4]
+2025-02-05T16:06:10.599-05:00 DEBUG 5884 --- [o-auto-1-exec-7] c.m.c.service.impl.EmployeeServiceImpl   : Updating employee [com.mindex.challenge.data.Employee@61ab17f4]
+2025-02-05T16:06:10.599-05:00 DEBUG 5884 --- [o-auto-1-exec-7] c.m.c.service.impl.EmployeeServiceImpl   : Fetching employee with id [95250c15-398f-4cf8-994b-104838efcc42]
+2025-02-05T16:06:10.604-05:00 DEBUG 5884 --- [o-auto-1-exec-8] c.m.c.controller.EmployeeController      : Received employee read request for id [16a596ae-edd3-4847-99fe-c4518e82c86f]
+2025-02-05T16:06:10.604-05:00 DEBUG 5884 --- [o-auto-1-exec-8] c.m.c.service.impl.EmployeeServiceImpl   : Fetching employee with id [16a596ae-edd3-4847-99fe-c4518e82c86f]
 </pre>
 </span>
 </div>
@@ -177,7 +177,7 @@ java.lang.RuntimeException: Invalid employeeId: 16a596ae-edd3-4847-99fe-THISISAT
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.6</a> at Feb 5, 2025, 3:15:05 PM</p>
+<a href="http://www.gradle.org">Gradle 8.6</a> at Feb 5, 2025, 4:06:11 PM</p>
 </div>
 </div>
 </body>

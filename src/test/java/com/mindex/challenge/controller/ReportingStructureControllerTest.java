@@ -52,6 +52,19 @@ public class ReportingStructureControllerTest {
         assertEquals("Engineering", structure.getEmployee().getDepartment());
         assertNotNull(structure.getEmployee().getDirectReports());
         assertEquals(2, structure.getEmployee().getDirectReports().size());
+        assertNotNull(structure.getEmployee().getDirectReports().get(0).getFirstName());
+        assertNotNull(structure.getEmployee().getDirectReports().get(0).getLastName());
+        assertNull(structure.getEmployee().getDirectReports().get(0).getDirectReports());
+        assertNotNull(structure.getEmployee().getDirectReports().get(1).getFirstName());
+        assertNotNull(structure.getEmployee().getDirectReports().get(1).getLastName());
+        assertNotNull(structure.getEmployee().getDirectReports().get(1).getDirectReports());
+        assertEquals(2, structure.getEmployee().getDirectReports().get(1).getDirectReports().size());
+        assertNotNull(structure.getEmployee().getDirectReports().get(1).getDirectReports().get(0).getFirstName());
+        assertNotNull(structure.getEmployee().getDirectReports().get(1).getDirectReports().get(0).getLastName());
+        assertNull(structure.getEmployee().getDirectReports().get(1).getDirectReports().get(0).getDirectReports());
+        assertNotNull(structure.getEmployee().getDirectReports().get(1).getDirectReports().get(1).getFirstName());
+        assertNotNull(structure.getEmployee().getDirectReports().get(1).getDirectReports().get(1).getLastName());
+        assertNull(structure.getEmployee().getDirectReports().get(1).getDirectReports().get(1).getDirectReports());
         assertEquals(4, structure.getNumberOfReports());
     }
 
